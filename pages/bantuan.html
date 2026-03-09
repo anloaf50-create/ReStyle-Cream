@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bantuan & FAQ — ReStyle</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    .faq-item { border:1px solid var(--border); border-radius:var(--radius-sm); margin-bottom:10px; overflow:hidden; }
+    .faq-q { padding:16px 20px; font-weight:600; cursor:pointer; display:flex; justify-content:space-between; align-items:center; transition:var(--transition); background:var(--surface); }
+    .faq-q:hover { background:var(--surface2); }
+    .faq-a { padding:0 20px; max-height:0; overflow:hidden; transition:all 0.35s; color:var(--text2); font-size:0.9rem; line-height:1.7; }
+    .faq-item.open .faq-a { max-height:200px; padding:4px 20px 16px; }
+    .faq-item.open .faq-icon { transform:rotate(180deg); }
+    .faq-icon { transition:transform 0.3s; color:var(--accent); }
+  </style>
+</head>
+<body>
+<div id="cursor-glow"></div>
+<div id="toast-container"></div>
+<nav>
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo">Re<span>Style</span></a>
+    <div class="nav-links">
+      <a href="../index.html"><i class="fas fa-home"></i> Beranda</a>
+      <a href="bantuan.html" class="active"><i class="fas fa-question-circle"></i> FAQ</a>
+      <a href="kontak.html"><i class="fas fa-envelope"></i> Kontak</a>
+    </div>
+    <button class="hamburger" id="hamburger-btn" onclick="toggleMobileMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
+    <div class="nav-actions">
+      <button class="btn-icon" id="theme-btn" onclick="toggleTheme()"><i class="fas fa-moon"></i></button>
+    </div>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="../index.html"><i class="fas fa-home"></i> Beranda</a>
+  <a href="tentang.html"><i class="fas fa-store"></i> Tentang</a>
+  <a href="kontak.html"><i class="fas fa-envelope"></i> Kontak</a>
+  <a href="layanan.html"><i class="fas fa-concierge-bell"></i> Layanan</a>
+  <a href="bantuan.html"><i class="fas fa-question-circle"></i> FAQ</a>
+</div>
+<main>
+  <div class="page-hero">
+    <h1>Bantuan & FAQ</h1>
+    <p>Jawaban untuk pertanyaan yang sering diajukan</p>
+  </div>
+  <div style="max-width:760px;margin:48px auto;padding:0 24px">
+
+    <h3 style="font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:700;margin-bottom:14px;color:var(--accent)">📦 Pembelian</h3>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Bagaimana cara membeli produk di ReStyle? <i class="fas fa-chevron-down faq-icon"></i></div>
+      <div class="faq-a">Pilih produk yang Anda inginkan, klik "Beli Sekarang" atau tambahkan ke keranjang. Lanjutkan ke checkout, isi data pengiriman, pilih kurir, dan konfirmasi pesanan. Mudah!</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Apakah produk sudah diverifikasi? <i class="fas fa-chevron-down faq-icon"></i></div>
+      <div class="faq-a">Ya! Semua produk di ReStyle melewati proses verifikasi tim kami. Kami memeriksa kondisi, keaslian, dan memastikan deskripsi produk akurat sebelum ditampilkan.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Berapa lama pengiriman? <i class="fas fa-chevron-down faq-icon"></i></div>
+      <div class="faq-a">Tergantung kurir yang dipilih: JNE Reguler 2-3 hari, J&T Express 1-2 hari, SiCepat REG 2-3 hari, POS Indonesia 3-5 hari. Estimasi dari tanggal pengiriman oleh toko.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Apakah ada jaminan uang kembali? <i class="fas fa-chevron-down faq-icon"></i></div>
+      <div class="faq-a">Ya! Jika produk tidak sesuai deskripsi atau rusak saat diterima, Anda bisa mengajukan klaim dalam 2x24 jam setelah barang diterima. Kami akan memproses refund atau penukaran.</div>
+    </div>
+
+    <h3 style="font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:700;margin:28px 0 14px;color:var(--accent)">💰 Penjualan</h3>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Bagaimana cara menjual produk? <i class="fas fa-chevron-down faq-icon"></i></div>
+      <div class="faq-a">Klik menu "Jual", isi formulir dengan detail produk Anda (foto, deskripsi, harga yang diinginkan). Tim kami akan menghubungi Anda dalam 1x24 jam untuk proses selanjutnya.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Berapa komisi yang diambil ReStyle? <i class="fas fa-chevron-down faq-icon"></i></div>
+      <div class="faq-a">ReStyle mengambil komisi 15% dari harga jual untuk menutup biaya operasional, verifikasi, dan marketing. Anda menerima 85% dari harga jual bersih.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Produk apa saja yang bisa dijual? <i class="fas fa-chevron-down faq-icon"></i></div>
+      <div class="faq-a">Semua kategori fashion: pakaian wanita, pria, anak-anak, sepatu, tas, dan aksesoris. Kondisi minimal "Baik" (tidak ada kerusakan signifikan) dan sudah dicuci bersih.</div>
+    </div>
+
+    <h3 style="font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:700;margin:28px 0 14px;color:var(--accent)">🔧 Akun & Teknis</h3>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Apakah perlu daftar akun untuk berbelanja? <i class="fas fa-chevron-down faq-icon"></i></div>
+      <div class="faq-a">Anda bisa browsing tanpa akun. Namun untuk checkout, Anda perlu login dengan Google untuk keamanan data dan kemudahan melacak pesanan.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Bagaimana cara melacak pesanan? <i class="fas fa-chevron-down faq-icon"></i></div>
+      <div class="faq-a">Klik menu "Lacak Pesanan" dan masukkan nomor pesanan (format RST-XXXXX) beserta email atau nomor HP yang digunakan saat checkout.</div>
+    </div>
+
+    <div style="background:var(--surface2);border-radius:var(--radius);padding:24px;margin-top:32px;text-align:center">
+      <p style="margin-bottom:12px;font-weight:600">Masih ada pertanyaan?</p>
+      <a href="kontak.html" class="btn-primary" style="text-decoration:none;display:inline-flex;align-items:center;gap:8px">
+        <i class="fas fa-envelope"></i> Hubungi Kami
+      </a>
+    </div>
+  </div>
+</main>
+<footer style="background:var(--surface);border-top:1px solid var(--border);padding:24px;text-align:center;color:var(--text3);font-size:0.85rem">
+  © 2025 ReStyle. | <a href="../index.html" style="color:var(--accent)">Kembali ke Beranda</a>
+</footer>
+<script src="../products.js"></script>
+<script src="../script.js"></script>
+<script>
+function toggleFaq(el) {
+  const item = el.closest('.faq-item');
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+</script>
+
+<script>
+function toggleMobileMenu() {
+  const menu = document.getElementById('mobile-menu');
+  if (!menu) return;
+  menu.classList.toggle('open');
+  document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
+}
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.mobile-menu a').forEach(a => {
+    a.addEventListener('click', () => {
+      document.getElementById('mobile-menu')?.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kebijakan Cookie — ReStyle</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    .prose h2 { font-family:'Syne',sans-serif; font-size:1.2rem; font-weight:700; margin:28px 0 10px; color:var(--accent); }
+    .prose p, .prose li { color:var(--text2); font-size:0.92rem; line-height:1.8; margin-bottom:10px; }
+    .prose ul { padding-left:20px; }
+    table { width:100%; border-collapse:collapse; margin:16px 0; }
+    th, td { border:1px solid var(--border); padding:10px 14px; font-size:0.85rem; text-align:left; }
+    th { background:var(--surface2); font-weight:700; }
+  </style>
+</head>
+<body>
+<div id="cursor-glow"></div>
+<nav>
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo">Re<span>Style</span></a>
+    <div class="nav-links"><a href="../index.html"><i class="fas fa-home"></i> Beranda</a></div>
+    <div class="nav-actions"><button class="btn-icon" id="theme-btn" onclick="toggleTheme()"><i class="fas fa-moon"></i></button></div>
+  </div>
+</nav>
+<main>
+  <div class="page-hero"><h1>Kebijakan Cookie</h1><p>Terakhir diperbarui: 1 Januari 2025</p></div>
+  <div style="max-width:760px;margin:48px auto;padding:0 24px" class="prose">
+    <p>ReStyle menggunakan cookie dan teknologi penyimpanan lokal untuk meningkatkan pengalaman Anda. Halaman ini menjelaskan apa itu cookie, jenis yang kami gunakan, dan cara mengelolanya.</p>
+
+    <h2>Apa itu Cookie?</h2>
+    <p>Cookie adalah file kecil yang disimpan di perangkat Anda ketika mengunjungi website. Cookie membantu website mengingat preferensi Anda dan meningkatkan pengalaman browsing.</p>
+
+    <h2>Cookie yang Kami Gunakan</h2>
+    <table>
+      <tr><th>Nama</th><th>Tujuan</th><th>Durasi</th></tr>
+      <tr><td>restyle-theme</td><td>Menyimpan preferensi mode gelap/terang</td><td>Permanen</td></tr>
+      <tr><td>restyle-cart</td><td>Menyimpan isi keranjang belanja</td><td>Sesi</td></tr>
+      <tr><td>restyle-user</td><td>Menyimpan data login pengguna</td><td>7 hari</td></tr>
+      <tr><td>restyle-orders</td><td>Menyimpan riwayat pesanan lokal</td><td>30 hari</td></tr>
+    </table>
+
+    <h2>LocalStorage</h2>
+    <p>Selain cookie, kami menggunakan localStorage browser untuk menyimpan data keranjang, pesanan, dan preferensi Anda secara lokal di perangkat Anda. Data ini tidak dikirim ke server kami secara otomatis.</p>
+
+    <h2>Cara Mengelola Cookie</h2>
+    <ul>
+      <li>Anda dapat menghapus cookie melalui pengaturan browser kapan saja</li>
+      <li>Menonaktifkan cookie mungkin mempengaruhi fungsi website (misalnya: keranjang tidak tersimpan)</li>
+      <li>Panduan pengelolaan cookie tersedia di dokumentasi browser Anda</li>
+    </ul>
+
+    <h2>Cookie Pihak Ketiga</h2>
+    <p>Kami menggunakan Google Fonts dan Font Awesome untuk tampilan website. Layanan ini mungkin menyimpan cookie mereka sendiri. Silakan periksa kebijakan privasi mereka untuk informasi lebih lanjut.</p>
+
+    <div style="background:var(--accent-glow);border:1px solid var(--accent);border-radius:var(--radius-sm);padding:16px;margin-top:24px">
+      <p style="margin:0;font-size:0.85rem;color:var(--text)">Dengan menggunakan ReStyle, Anda menyetujui penggunaan cookie sesuai kebijakan ini. Untuk pertanyaan: <strong>privacy@restyle.id</strong></p>
+    </div>
+  </div>
+</main>
+<footer style="background:var(--surface);border-top:1px solid var(--border);padding:24px;text-align:center;color:var(--text3);font-size:0.85rem">
+  © 2025 ReStyle. | <a href="../index.html" style="color:var(--accent)">Kembali ke Beranda</a>
+</footer>
+<script src="../products.js"></script>
+<script src="../script.js"></script>
+</body>
+</html>

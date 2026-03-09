@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ReStyle — Direct Re-commerce | Buy-Back & Trade-In Fashion</title>
+  <meta name="description" content="Platform jual beli pakaian preloved terpercaya. Trade-in dan buy-back fashion berkualitas.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<!-- CURSOR GLOW -->
+<div id="cursor-glow"></div>
+
+<!-- TOAST -->
+<div id="toast-container"></div>
+
+<!-- ========== NAVBAR ========== -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Re<span>Style</span></a>
+
+    <div class="nav-links">
+      <a href="index.html" class="active"><i class="fas fa-home"></i> Beranda</a>
+      <a href="#jual" onclick="openModal('sell-modal')"><i class="fas fa-tag"></i> Jual</a>
+      <a href="#belanja" onclick="scrollTo('products-section')"><i class="fas fa-shopping-bag"></i> Belanja</a>
+      <a href="#cara-kerja" onclick="scrollTo('how-it-works')"><i class="fas fa-info-circle"></i> Cara Kerja</a>
+      <a href="#kategori" onclick="scrollTo('categories-section')"><i class="fas fa-th-large"></i> Kategori</a>
+      <a href="pages/tentang.html"><i class="fas fa-store"></i> Tentang</a>
+      <a href="pages/kontak.html"><i class="fas fa-envelope"></i> Kontak</a>
+      <a href="pages/bantuan.html"><i class="fas fa-question-circle"></i> FAQ</a>
+      <a href="#lacak" onclick="openModal('track-modal')"><i class="fas fa-map-marker-alt"></i> Lacak</a>
+    </div>
+
+    <div class="nav-actions">
+      <button class="btn-icon" id="theme-btn" onclick="toggleTheme()" title="Ganti Tema">
+        <i class="fas fa-moon"></i>
+      </button>
+      <button class="btn-icon" onclick="openModal('sell-modal')" title="Jual Produk">
+        <i class="fas fa-tag"></i>
+      </button>
+      <button class="btn-icon" onclick="openCartModal()" title="Keranjang">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="cart-badge" style="display:none">0</span>
+      </button>
+      <button class="btn-icon" onclick="openModal('checkout-modal')" title="Checkout">
+        <i class="fas fa-credit-card"></i>
+      </button>
+    </div>
+
+    <div class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobile-menu">
+  <a href="index.html"><i class="fas fa-home"></i> Beranda</a>
+  <a href="#" onclick="openModal('sell-modal')"><i class="fas fa-tag"></i> Jual Produk</a>
+  <a href="#" onclick="scrollTo('products-section')"><i class="fas fa-shopping-bag"></i> Belanja</a>
+  <a href="#" onclick="scrollTo('how-it-works')"><i class="fas fa-info-circle"></i> Cara Kerja</a>
+  <a href="#" onclick="scrollTo('categories-section')"><i class="fas fa-th-large"></i> Kategori</a>
+  <a href="#" onclick="openCartModal()"><i class="fas fa-shopping-cart"></i> Keranjang</a>
+  <a href="#" onclick="openCheckout()"><i class="fas fa-credit-card"></i> Checkout</a>
+  <a href="pages/tentang.html"><i class="fas fa-store"></i> Tentang Kami</a>
+  <a href="pages/kontak.html"><i class="fas fa-envelope"></i> Kontak</a>
+  <a href="pages/bantuan.html"><i class="fas fa-question-circle"></i> FAQ</a>
+  <a href="pages/layanan.html"><i class="fas fa-concierge-bell"></i> Layanan</a>
+  <a href="#" onclick="openModal('track-modal')"><i class="fas fa-map-marker-alt"></i> Lacak Pesanan</a>
+</div>
+
+<main>
+  <!-- ========== HERO ========== -->
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Fashion <em>Preloved</em><br>Berkualitas Tinggi</h1>
+      <p>Platform Re-commerce terpercaya. Jual pakaian lamamu, beli fashion premium dengan harga terjangkau. Berkelanjutan dan stylish.</p>
+      <div class="hero-actions">
+        <button class="btn-primary" onclick="scrollTo('products-section')">
+          <i class="fas fa-shopping-bag"></i> Mulai Belanja
+        </button>
+        <button class="btn-secondary" onclick="openModal('sell-modal')">
+          <i class="fas fa-tag"></i> Jual Sekarang
+        </button>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <div class="stat-num">2.4K+</div>
+          <div class="stat-label">Produk</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">12K+</div>
+          <div class="stat-label">Pembeli</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">98%</div>
+          <div class="stat-label">Puas</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">4.9★</div>
+          <div class="stat-label">Rating</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-card">
+        <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=300&h=400&fit=crop" alt="Fashion">
+        <span class="hero-card-badge">NEW</span>
+        <div class="hero-card-bottom">
+          <p>Pakaian Wanita</p>
+          <strong>Jumpsuit Premium</strong>
+        </div>
+      </div>
+      <div class="hero-card">
+        <img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?w=300&h=400&fit=crop" alt="Fashion">
+        <span class="hero-card-badge">HOT</span>
+        <div class="hero-card-bottom">
+          <p>Pakaian Pria</p>
+          <strong>Jaket Denim Classic</strong>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SEARCH ========== -->
+  <section class="search-section">
+    <div class="search-wrap">
+      <i class="fas fa-search search-icon"></i>
+      <input type="text" id="search-input" placeholder="Cari baju, celana, aksesoris, kategori..." oninput="handleSearch(this.value)">
+      <button class="search-btn" onclick="handleSearch(document.getElementById('search-input').value)">
+        <i class="fas fa-search"></i> Cari
+      </button>
+    </div>
+  </section>
+
+  <!-- ========== CATEGORIES ========== -->
+  <section class="categories-section" id="categories-section">
+    <div class="section-header">
+      <h2 class="section-title">Kategori Produk</h2>
+      <a class="section-link" onclick="selectCategory('all')" href="#">Lihat Semua →</a>
+    </div>
+    <div class="cat-grid" id="cat-grid"></div>
+  </section>
+
+  <!-- ========== PRODUCTS ========== -->
+  <section class="products-section" id="products-section">
+    <div class="section-header">
+      <h2 class="section-title">Produk Tersedia</h2>
+      <div style="display:flex;gap:10px;align-items:center">
+        <span class="products-count" id="products-count"></span>
+        <select class="sort-select" id="sort-select" onchange="renderProducts()">
+          <option value="">Urutkan</option>
+          <option value="price-asc">Harga Terendah</option>
+          <option value="price-desc">Harga Tertinggi</option>
+          <option value="rating">Rating Terbaik</option>
+          <option value="terjual">Terlaris</option>
+        </select>
+      </div>
+    </div>
+    <div class="products-grid" id="products-grid"></div>
+    <div class="pagination" id="pagination"></div>
+  </section>
+
+  <!-- ========== HOW IT WORKS ========== -->
+  <section class="howitworks" id="how-it-works">
+    <div class="howitworks-inner">
+      <div class="section-header">
+        <h2 class="section-title">Cara Kerja ReStyle</h2>
+      </div>
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-num">01</div>
+          <div class="step-icon">📸</div>
+          <div class="step-title">Foto & Daftarkan</div>
+          <div class="step-desc">Upload foto dan detail pakaian yang ingin kamu jual melalui form sederhana.</div>
+        </div>
+        <div class="step-card">
+          <div class="step-num">02</div>
+          <div class="step-icon">✅</div>
+          <div class="step-title">Verifikasi Tim</div>
+          <div class="step-desc">Tim kami memverifikasi kondisi produk dan menentukan harga terbaik untukmu.</div>
+        </div>
+        <div class="step-card">
+          <div class="step-num">03</div>
+          <div class="step-icon">🛍️</div>
+          <div class="step-title">Produk Terdaftar</div>
+          <div class="step-desc">Produkmu tampil di platform dan dapat dibeli oleh ribuan pembeli aktif kami.</div>
+        </div>
+        <div class="step-card">
+          <div class="step-num">04</div>
+          <div class="step-icon">💰</div>
+          <div class="step-title">Terima Pembayaran</div>
+          <div class="step-desc">Setelah terjual, pembayaran langsung ditransfer ke rekeningmu dalam 1x24 jam.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ========== FOOTER ========== -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">ReStyle</div>
+        <p class="footer-desc">Platform re-commerce fashion terpercaya. Jual beli pakaian preloved dengan aman, mudah, dan berkelanjutan.</p>
+        <div style="display:flex;gap:10px;margin-top:16px">
+          <a href="#" style="width:34px;height:34px;background:var(--accent);color:white;border-radius:8px;display:flex;align-items:center;justify-content:center;text-decoration:none"><i class="fab fa-instagram"></i></a>
+          <a href="#" style="width:34px;height:34px;background:var(--accent);color:white;border-radius:8px;display:flex;align-items:center;justify-content:center;text-decoration:none"><i class="fab fa-tiktok"></i></a>
+          <a href="#" style="width:34px;height:34px;background:var(--accent);color:white;border-radius:8px;display:flex;align-items:center;justify-content:center;text-decoration:none"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Navigasi</h4>
+        <a href="index.html">Beranda</a>
+        <a href="#" onclick="openModal('sell-modal')">Jual Produk</a>
+        <a href="#" onclick="scrollTo('products-section')">Belanja</a>
+        <a href="#" onclick="openModal('track-modal')">Lacak Pesanan</a>
+      </div>
+      <div class="footer-col">
+        <h4>Informasi</h4>
+        <a href="pages/tentang.html">Tentang Kami</a>
+        <a href="pages/layanan.html">Layanan</a>
+        <a href="pages/bantuan.html">Bantuan/FAQ</a>
+        <a href="pages/kontak.html">Kontak</a>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <a href="pages/privasi.html">Kebijakan Privasi</a>
+        <a href="pages/cookie.html">Kebijakan Cookie</a>
+        <a href="pages/layanan.html">Syarat & Ketentuan</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 ReStyle. All rights reserved.</span>
+      <span>Made with ❤️ for sustainable fashion</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ========== MODALS ========== -->
+
+<!-- DETAIL MODAL -->
+<div class="overlay" id="detail-modal">
+  <div class="modal" style="max-width:860px">
+    <div class="modal-header">
+      <span class="modal-title">Detail Produk</span>
+      <button class="modal-close" onclick="closeModal('detail-modal')"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="modal-body" id="modal-detail-content"></div>
+  </div>
+</div>
+
+<!-- CART MODAL -->
+<div class="overlay" id="cart-modal">
+  <div class="modal" style="max-width:520px">
+    <div class="modal-header">
+      <span class="modal-title"><i class="fas fa-shopping-cart"></i> Keranjang Belanja</span>
+      <button class="modal-close" onclick="closeModal('cart-modal')"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="modal-body">
+      <div class="cart-list" id="cart-list"></div>
+      <div class="cart-summary" id="cart-summary" style="display:none"></div>
+    </div>
+  </div>
+</div>
+
+<!-- CHECKOUT MODAL -->
+<div class="overlay" id="checkout-modal">
+  <div class="modal" style="max-width:640px">
+    <div class="modal-header">
+      <span class="modal-title"><i class="fas fa-credit-card"></i> Checkout</span>
+      <button class="modal-close" onclick="closeModal('checkout-modal')"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="modal-body">
+      <!-- STEP NAV -->
+      <div class="steps-nav">
+        <div class="step-nav-item active" data-step="1">1. Login</div>
+        <div class="step-nav-item" data-step="2">2. Data</div>
+        <div class="step-nav-item" data-step="3">3. Kurir</div>
+        <div class="step-nav-item" data-step="4">4. Ringkasan</div>
+        <div class="step-nav-item" data-step="5">5. Selesai</div>
+      </div>
+
+      <!-- STEP 1: LOGIN -->
+      <div class="checkout-step active" id="step-1">
+        <h3 style="font-family:'Syne',sans-serif;margin-bottom:8px">Login untuk Melanjutkan</h3>
+        <p style="color:var(--text2);font-size:0.88rem;margin-bottom:20px">Silakan login dengan akun Google Anda untuk melanjutkan proses pembelian.</p>
+        <button class="google-login-btn" onclick="loginWithGoogle()">
+          <span class="google-icon"><i class="fab fa-google"></i></span>
+          Login dengan Google
+        </button>
+        <div class="login-divider">atau</div>
+        <p style="text-align:center;color:var(--text3);font-size:0.82rem">Dengan melanjutkan, Anda menyetujui <a href="pages/privasi.html" style="color:var(--accent)">Kebijakan Privasi</a> kami.</p>
+        <div id="login-result"></div>
+        <div style="display:flex;justify-content:flex-end;margin-top:20px">
+          <button class="btn-primary" onclick="nextStep()">Lanjut <i class="fas fa-arrow-right"></i></button>
+        </div>
+      </div>
+
+      <!-- STEP 2: DATA PEMBELI -->
+      <div class="checkout-step" id="step-2">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px">
+          <h3 style="font-family:'Syne',sans-serif">Data Pembeli</h3>
+          <button class="btn-secondary" onclick="useAutoLocation()" style="padding:8px 14px;font-size:0.8rem">
+            <i class="fas fa-map-marker-alt"></i> Lokasi Otomatis
+          </button>
+        </div>
+        <div class="form-grid">
+          <div class="form-group full">
+            <label>Nama Lengkap *</label>
+            <input type="text" id="buyer-name" placeholder="Masukkan nama lengkap">
+          </div>
+          <div class="form-group">
+            <label>Nomor HP *</label>
+            <input type="tel" id="buyer-phone" placeholder="08xx-xxxx-xxxx">
+          </div>
+          <div class="form-group">
+            <label>Email *</label>
+            <input type="email" id="buyer-email" placeholder="email@example.com">
+          </div>
+          <div class="form-group full">
+            <label>Alamat Lengkap *</label>
+            <textarea id="buyer-alamat" placeholder="Jl. Nama Jalan No. XX, RT/RW, Kelurahan..."></textarea>
+          </div>
+          <div class="form-group">
+            <label>Kota *</label>
+            <input type="text" id="buyer-kota" placeholder="Kota">
+          </div>
+          <div class="form-group">
+            <label>Provinsi *</label>
+            <input type="text" id="buyer-provinsi" placeholder="Provinsi">
+          </div>
+          <div class="form-group">
+            <label>Kode Pos *</label>
+            <input type="text" id="buyer-pos" placeholder="00000">
+          </div>
+        </div>
+        <div style="display:flex;gap:10px;justify-content:space-between;margin-top:20px">
+          <button class="btn-secondary" onclick="prevStep()"><i class="fas fa-arrow-left"></i> Kembali</button>
+          <button class="btn-primary" onclick="nextStep()">Lanjut <i class="fas fa-arrow-right"></i></button>
+        </div>
+      </div>
+
+      <!-- STEP 3: KURIR -->
+      <div class="checkout-step" id="step-3">
+        <h3 style="font-family:'Syne',sans-serif;margin-bottom:16px">Pilih Kurir Pengiriman</h3>
+        <div class="kurir-grid">
+          <div class="kurir-option" data-kurir="jne" onclick="selectCourier('jne')">
+            <span class="kurir-icon">🚚</span>
+            <div class="kurir-info"><strong>JNE</strong><span>Reguler 2-3 hari</span></div>
+            <span class="kurir-price">Rp 15.000</span>
+          </div>
+          <div class="kurir-option" data-kurir="jnt" onclick="selectCourier('jnt')">
+            <span class="kurir-icon">📦</span>
+            <div class="kurir-info"><strong>J&T Express</strong><span>Express 1-2 hari</span></div>
+            <span class="kurir-price">Rp 13.000</span>
+          </div>
+          <div class="kurir-option" data-kurir="sicepat" onclick="selectCourier('sicepat')">
+            <span class="kurir-icon">⚡</span>
+            <div class="kurir-info"><strong>SiCepat</strong><span>REG 2-3 hari</span></div>
+            <span class="kurir-price">Rp 12.000</span>
+          </div>
+          <div class="kurir-option" data-kurir="pos" onclick="selectCourier('pos')">
+            <span class="kurir-icon">📮</span>
+            <div class="kurir-info"><strong>POS Indonesia</strong><span>Reguler 3-5 hari</span></div>
+            <span class="kurir-price">Rp 10.000</span>
+          </div>
+        </div>
+        <div style="display:flex;gap:10px;justify-content:space-between;margin-top:20px">
+          <button class="btn-secondary" onclick="prevStep()"><i class="fas fa-arrow-left"></i> Kembali</button>
+          <button class="btn-primary" onclick="nextStep()">Lanjut <i class="fas fa-arrow-right"></i></button>
+        </div>
+      </div>
+
+      <!-- STEP 4: RINGKASAN -->
+      <div class="checkout-step" id="step-4">
+        <h3 style="font-family:'Syne',sans-serif;margin-bottom:16px">Ringkasan Pesanan</h3>
+        <div class="cart-summary" id="order-summary-list" style="display:flex;flex-direction:column;gap:8px"></div>
+        <div style="display:flex;gap:10px;justify-content:space-between;margin-top:20px">
+          <button class="btn-secondary" onclick="prevStep()"><i class="fas fa-arrow-left"></i> Kembali</button>
+          <button class="btn-primary" onclick="confirmOrder()"><i class="fas fa-check"></i> Konfirmasi Pesanan</button>
+        </div>
+      </div>
+
+      <!-- STEP 5: SUCCESS -->
+      <div class="checkout-step" id="step-5">
+        <div class="success-content">
+          <div class="success-icon">🎉</div>
+          <h2>Pesanan Berhasil!</h2>
+          <p>Terima kasih telah berbelanja di ReStyle.</p>
+          <p>Nomor Pesanan Anda:</p>
+          <div class="order-number" id="success-order-id">RST-XXXXXX</div>
+          <p style="font-size:0.85rem;color:var(--text3);margin-top:8px">Simpan nomor pesanan untuk melacak status pengiriman</p>
+          <div style="display:flex;gap:10px;justify-content:center;margin-top:20px;flex-wrap:wrap">
+            <button class="btn-primary" onclick="openModal('track-modal');closeModal('checkout-modal')">
+              <i class="fas fa-map-marker-alt"></i> Lacak Pesanan
+            </button>
+            <button class="btn-secondary" onclick="closeModal('checkout-modal')">
+              <i class="fas fa-home"></i> Kembali ke Toko
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TRACK ORDER MODAL -->
+<div class="overlay" id="track-modal">
+  <div class="modal" style="max-width:500px">
+    <div class="modal-header">
+      <span class="modal-title"><i class="fas fa-map-marker-alt"></i> Lacak Pesanan</span>
+      <button class="modal-close" onclick="closeModal('track-modal')"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="modal-body">
+      <p style="color:var(--text2);font-size:0.88rem;margin-bottom:16px">Masukkan nomor pesanan dan kontak untuk melihat status pengiriman.</p>
+      <div class="track-form">
+        <div class="form-group">
+          <label>Nomor Pesanan</label>
+          <input type="text" id="track-order-id" placeholder="RST-XXXXXX" style="text-transform:uppercase">
+        </div>
+        <div class="form-group">
+          <label>Email / Nomor HP</label>
+          <input type="text" id="track-contact" placeholder="email@example.com atau 08xx-xxxx">
+        </div>
+        <button class="btn-primary" style="width:100%;justify-content:center" onclick="trackOrder()">
+          <i class="fas fa-search"></i> Lacak Sekarang
+        </button>
+      </div>
+      <div class="track-status" id="track-result"></div>
+    </div>
+  </div>
+</div>
+
+<!-- SELL MODAL -->
+<div class="overlay" id="sell-modal">
+  <div class="modal" style="max-width:560px">
+    <div class="modal-header">
+      <span class="modal-title"><i class="fas fa-tag"></i> Jual Produk</span>
+      <button class="modal-close" onclick="closeModal('sell-modal')"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="modal-body">
+      <div class="sell-hero" style="border-radius:var(--radius-sm);margin-bottom:20px">
+        <h2 style="font-size:1.4rem;margin-bottom:4px">Jual Fashion Lamamu</h2>
+        <p style="font-size:0.85rem">Daftarkan produkmu dan dapatkan harga terbaik!</p>
+      </div>
+      <div class="form-grid">
+        <div class="form-group full">
+          <label>Nama Produk *</label>
+          <input type="text" id="sell-nama" placeholder="Contoh: Dress Floral Wanita Size M">
+        </div>
+        <div class="form-group">
+          <label>Kategori *</label>
+          <select id="sell-kat">
+            <option value="">Pilih kategori</option>
+            <option value="wanita">Pakaian Wanita</option>
+            <option value="pria">Pakaian Pria</option>
+            <option value="anak">Bayi & Anak</option>
+            <option value="aksesoris">Aksesoris</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Kondisi *</label>
+          <select id="sell-kondisi">
+            <option value="">Pilih kondisi</option>
+            <option value="sangat-baik">Sangat Baik</option>
+            <option value="baik">Baik</option>
+            <option value="cukup">Cukup</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Ukuran</label>
+          <input type="text" id="sell-ukuran" placeholder="S, M, L, XL...">
+        </div>
+        <div class="form-group">
+          <label>Harga yang Diinginkan *</label>
+          <input type="number" id="sell-harga" placeholder="Rp 50.000">
+        </div>
+        <div class="form-group full">
+          <label>Deskripsi *</label>
+          <textarea id="sell-desc" placeholder="Ceritakan kondisi detail produk, alasan jual, dsb..."></textarea>
+        </div>
+        <div class="form-group full">
+          <label>Nomor HP untuk Dihubungi</label>
+          <input type="tel" id="sell-phone" placeholder="08xx-xxxx-xxxx">
+        </div>
+      </div>
+      <button class="btn-primary" style="width:100%;justify-content:center;margin-top:16px" onclick="submitSell()">
+        <i class="fas fa-paper-plane"></i> Daftarkan Produk
+      </button>
+    </div>
+  </div>
+</div>
+
+<script src="products.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

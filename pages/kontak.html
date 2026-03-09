@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kontak — ReStyle</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+<div id="cursor-glow"></div>
+<div id="toast-container"></div>
+<nav>
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo">Re<span>Style</span></a>
+    <div class="nav-links">
+      <a href="../index.html"><i class="fas fa-home"></i> Beranda</a>
+      <a href="tentang.html"><i class="fas fa-store"></i> Tentang</a>
+      <a href="kontak.html" class="active"><i class="fas fa-envelope"></i> Kontak</a>
+      <a href="bantuan.html"><i class="fas fa-question-circle"></i> FAQ</a>
+    </div>
+    <button class="hamburger" id="hamburger-btn" onclick="toggleMobileMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
+    <div class="nav-actions">
+      <button class="btn-icon" id="theme-btn" onclick="toggleTheme()"><i class="fas fa-moon"></i></button>
+    </div>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="../index.html"><i class="fas fa-home"></i> Beranda</a>
+  <a href="tentang.html"><i class="fas fa-store"></i> Tentang</a>
+  <a href="kontak.html"><i class="fas fa-envelope"></i> Kontak</a>
+  <a href="layanan.html"><i class="fas fa-concierge-bell"></i> Layanan</a>
+  <a href="bantuan.html"><i class="fas fa-question-circle"></i> FAQ</a>
+</div>
+<main>
+  <div class="page-hero">
+    <h1>Hubungi Kami</h1>
+    <p>Kami siap membantu Anda 24/7</p>
+  </div>
+  <div style="max-width:900px;margin:48px auto;padding:0 24px">
+    <div class="kontak-main-grid">
+      <div>
+        <h2 style="font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:700;margin-bottom:20px">Informasi Kontak</h2>
+        <div style="display:flex;flex-direction:column;gap:16px">
+          <div style="display:flex;gap:14px;align-items:flex-start;padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm)">
+            <div style="width:42px;height:42px;background:var(--accent);color:white;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0"><i class="fas fa-envelope"></i></div>
+            <div><strong style="display:block">Email</strong><span style="color:var(--text2);font-size:0.88rem">halo@restyle.id</span><br><span style="color:var(--text2);font-size:0.88rem">support@restyle.id</span></div>
+          </div>
+          <div style="display:flex;gap:14px;align-items:flex-start;padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm)">
+            <div style="width:42px;height:42px;background:#25D366;color:white;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0"><i class="fab fa-whatsapp"></i></div>
+            <div><strong style="display:block">WhatsApp</strong><span style="color:var(--text2);font-size:0.88rem">+62 812-3456-7890</span><br><a href="https://wa.me/6281234567890" target="_blank" style="color:var(--accent);font-size:0.82rem">Chat Sekarang →</a></div>
+          </div>
+          <div style="display:flex;gap:14px;align-items:flex-start;padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm)">
+            <div style="width:42px;height:42px;background:#E1306C;color:white;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0"><i class="fab fa-instagram"></i></div>
+            <div><strong style="display:block">Instagram</strong><span style="color:var(--text2);font-size:0.88rem">@restyle.id</span></div>
+          </div>
+          <div style="display:flex;gap:14px;align-items:flex-start;padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm)">
+            <div style="width:42px;height:42px;background:#000;color:white;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0"><i class="fab fa-tiktok"></i></div>
+            <div><strong style="display:block">TikTok</strong><span style="color:var(--text2);font-size:0.88rem">@restyle.id</span></div>
+          </div>
+          <div style="display:flex;gap:14px;align-items:flex-start;padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm)">
+            <div style="width:42px;height:42px;background:var(--accent3);color:white;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0"><i class="fas fa-map-marker-alt"></i></div>
+            <div><strong style="display:block">Alamat</strong><span style="color:var(--text2);font-size:0.88rem">Jl. Fashion No. 1, Jakarta Selatan, DKI Jakarta 12345</span></div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h2 style="font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:700;margin-bottom:20px">Kirim Pesan</h2>
+        <div class="sell-form">
+          <div class="form-grid" style="gap:14px">
+            <div class="form-group full">
+              <label>Nama Lengkap</label>
+              <input type="text" id="k-nama" placeholder="Nama Anda">
+            </div>
+            <div class="form-group">
+              <label>Email</label>
+              <input type="email" id="k-email" placeholder="email@example.com">
+            </div>
+            <div class="form-group">
+              <label>Telepon</label>
+              <input type="tel" id="k-phone" placeholder="08xx-xxxx">
+            </div>
+            <div class="form-group full">
+              <label>Subjek</label>
+              <select id="k-subjek">
+                <option>Pertanyaan Pembelian</option>
+                <option>Pertanyaan Penjualan</option>
+                <option>Keluhan</option>
+                <option>Kerja Sama</option>
+                <option>Lainnya</option>
+              </select>
+            </div>
+            <div class="form-group full">
+              <label>Pesan</label>
+              <textarea id="k-pesan" placeholder="Tuliskan pesan Anda di sini..." style="min-height:120px"></textarea>
+            </div>
+          </div>
+          <button class="btn-primary" style="width:100%;justify-content:center;margin-top:16px" onclick="sendMessage()">
+            <i class="fas fa-paper-plane"></i> Kirim Pesan
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+<footer style="background:var(--surface);border-top:1px solid var(--border);padding:24px;text-align:center;color:var(--text3);font-size:0.85rem">
+  © 2025 ReStyle. All rights reserved. | <a href="../index.html" style="color:var(--accent)">Kembali ke Beranda</a>
+</footer>
+<script src="../products.js"></script>
+<script src="../script.js"></script>
+<script>
+function sendMessage() {
+  const nama = document.getElementById('k-nama').value;
+  const pesan = document.getElementById('k-pesan').value;
+  if (!nama || !pesan) { showToast('❌ Lengkapi nama dan pesan!', 'info'); return; }
+  showToast('✅ Pesan berhasil dikirim! Kami akan membalas segera.', 'success');
+  ['k-nama','k-email','k-phone','k-pesan'].forEach(id => { document.getElementById(id).value = ''; });
+}
+</script>
+
+<script>
+function toggleMobileMenu() {
+  const menu = document.getElementById('mobile-menu');
+  if (!menu) return;
+  menu.classList.toggle('open');
+  document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
+}
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.mobile-menu a').forEach(a => {
+    a.addEventListener('click', () => {
+      document.getElementById('mobile-menu')?.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  });
+});
+</script>
+</body>
+</html>

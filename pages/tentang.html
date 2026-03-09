@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tentang Kami — ReStyle</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+<div id="cursor-glow"></div>
+<div id="toast-container"></div>
+<nav>
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo">Re<span>Style</span></a>
+    <div class="nav-links">
+      <a href="../index.html"><i class="fas fa-home"></i> Beranda</a>
+      <a href="tentang.html" class="active"><i class="fas fa-store"></i> Tentang</a>
+      <a href="kontak.html"><i class="fas fa-envelope"></i> Kontak</a>
+      <a href="layanan.html"><i class="fas fa-concierge-bell"></i> Layanan</a>
+      <a href="bantuan.html"><i class="fas fa-question-circle"></i> FAQ</a>
+    </div>
+    <button class="hamburger" id="hamburger-btn" onclick="toggleMobileMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
+    <div class="nav-actions">
+      <button class="btn-icon" id="theme-btn" onclick="toggleTheme()"><i class="fas fa-moon"></i></button>
+    </div>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="../index.html"><i class="fas fa-home"></i> Beranda</a>
+  <a href="tentang.html"><i class="fas fa-store"></i> Tentang</a>
+  <a href="kontak.html"><i class="fas fa-envelope"></i> Kontak</a>
+  <a href="layanan.html"><i class="fas fa-concierge-bell"></i> Layanan</a>
+  <a href="bantuan.html"><i class="fas fa-question-circle"></i> FAQ</a>
+</div>
+<main>
+  <div class="page-hero">
+    <h1>Tentang ReStyle</h1>
+    <p>Platform re-commerce fashion terpercaya untuk Indonesia</p>
+  </div>
+  <div style="max-width:880px;margin:48px auto;padding:0 24px">
+    <div class="about-intro-grid">
+      <div>
+        <h2 style="font-family:'Syne',sans-serif;font-size:1.8rem;font-weight:800;margin-bottom:16px;line-height:1.2">Kami percaya fashion berkelanjutan itu <span style="color:var(--accent)">indah</span></h2>
+        <p style="color:var(--text2);line-height:1.8;margin-bottom:14px">ReStyle didirikan pada 2022 dengan misi sederhana: memberi pakaian berkualitas kesempatan kedua, sekaligus membantu masyarakat Indonesia mendapatkan fashion premium dengan harga terjangkau.</p>
+        <p style="color:var(--text2);line-height:1.8">Kami menggabungkan teknologi modern dengan kepercayaan komunitas untuk menciptakan ekosistem jual-beli pakaian preloved yang aman, mudah, dan menyenangkan.</p>
+      </div>
+      <div style="background:var(--surface2);border-radius:var(--radius);padding:32px;border:1px solid var(--border)">
+        <div class="about-stats-grid">
+          <div style="text-align:center">
+            <div style="font-family:'Syne',sans-serif;font-size:2rem;font-weight:800;color:var(--accent)">2.4K+</div>
+            <div style="font-size:0.82rem;color:var(--text3)">Produk Aktif</div>
+          </div>
+          <div style="text-align:center">
+            <div style="font-family:'Syne',sans-serif;font-size:2rem;font-weight:800;color:var(--accent)">12K+</div>
+            <div style="font-size:0.82rem;color:var(--text3)">Pembeli Aktif</div>
+          </div>
+          <div style="text-align:center">
+            <div style="font-family:'Syne',sans-serif;font-size:2rem;font-weight:800;color:var(--accent)">5K+</div>
+            <div style="font-size:0.82rem;color:var(--text3)">Penjual Terdaftar</div>
+          </div>
+          <div style="text-align:center">
+            <div style="font-family:'Syne',sans-serif;font-size:2rem;font-weight:800;color:var(--accent)">98%</div>
+            <div style="font-size:0.82rem;color:var(--text3)">Kepuasan</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-bottom:48px">
+      <h3 style="font-family:'Syne',sans-serif;font-size:1.3rem;font-weight:700;margin-bottom:20px">Nilai-nilai Kami</h3>
+      <div class="about-values-grid">
+        <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:24px;text-align:center">
+          <div style="font-size:2rem;margin-bottom:10px">♻️</div>
+          <strong style="display:block;margin-bottom:6px">Berkelanjutan</strong>
+          <p style="font-size:0.82rem;color:var(--text2)">Mengurangi limbah fashion dengan memberi pakaian kesempatan kedua.</p>
+        </div>
+        <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:24px;text-align:center">
+          <div style="font-size:2rem;margin-bottom:10px">🛡️</div>
+          <strong style="display:block;margin-bottom:6px">Terpercaya</strong>
+          <p style="font-size:0.82rem;color:var(--text2)">Setiap produk diverifikasi tim kami untuk menjamin kualitas.</p>
+        </div>
+        <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:24px;text-align:center">
+          <div style="font-size:2rem;margin-bottom:10px">💚</div>
+          <strong style="display:block;margin-bottom:6px">Komunitas</strong>
+          <p style="font-size:0.82rem;color:var(--text2)">Membangun komunitas fashion lovers yang saling mendukung.</p>
+        </div>
+      </div>
+    </div>
+
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:32px;margin-bottom:48px">
+      <h3 style="font-family:'Syne',sans-serif;font-size:1.3rem;font-weight:700;margin-bottom:20px">Tim Kami</h3>
+      <div class="about-team-grid">
+        <div style="text-align:center">
+          <img src="https://ui-avatars.com/api/?name=Delisha+Chintya+Melani&background=c8502a&color=fff&size=80" style="border-radius:50%;margin-bottom:10px" alt="Delisha">
+          <strong style="display:block;font-size:0.9rem">Delisha Chintya Melani</strong>
+        </div>
+        <div style="text-align:center">
+          <img src="https://ui-avatars.com/api/?name=Febriani+Dwipuspa+Ningrum&background=3d6b4f&color=fff&size=80" style="border-radius:50%;margin-bottom:10px" alt="Febriani">
+          <strong style="display:block;font-size:0.9rem">Febriani Dwipuspa Ningrum</strong>
+        </div>
+        <div style="text-align:center">
+          <img src="https://ui-avatars.com/api/?name=William+Tri+Atmojo&background=c9a84c&color=fff&size=80" style="border-radius:50%;margin-bottom:10px" alt="William">
+          <strong style="display:block;font-size:0.9rem">William Tri Atmojo</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+<footer style="background:var(--surface);border-top:1px solid var(--border);padding:24px;text-align:center;color:var(--text3);font-size:0.85rem">
+  © 2025 ReStyle. All rights reserved. | <a href="../index.html" style="color:var(--accent)">Kembali ke Beranda</a>
+</footer>
+<script src="../products.js"></script>
+<script src="../script.js"></script>
+
+<script>
+function toggleMobileMenu() {
+  const menu = document.getElementById('mobile-menu');
+  if (!menu) return;
+  menu.classList.toggle('open');
+  document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
+}
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.mobile-menu a').forEach(a => {
+    a.addEventListener('click', () => {
+      document.getElementById('mobile-menu')?.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  });
+});
+</script>
+</body>
+</html>
